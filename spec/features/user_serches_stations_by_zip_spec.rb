@@ -16,6 +16,10 @@ RSpec.feature "User can search stations by zip" do
     click_on("Locate")
 
     expect(current_path).to eq("/search?zip=80203")
-    #expect content to be station attributes
+    expage(page).to have_content("Name: ")
+    expage(page).to have_content("Address: ")
+    expage(page).to have_content("Fuel Types: ")
+    expage(page).to have_content("Distance: ")
+    expage(page).to have_content("Access Times: ")
   end
 end
