@@ -12,7 +12,7 @@ RSpec.feature "User can search stations by zip" do
   scenario "they navigate to root and search" do
     visit root_path
 
-    fill_in "zip_code", with: "80203"
+    fill_in "Search by Zip", with: "80203"
     click_on("Locate")
 
     expect(current_path).to eq("/search?zip=80203")

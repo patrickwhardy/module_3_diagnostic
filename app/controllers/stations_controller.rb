@@ -4,6 +4,6 @@ class StationsController < ApplicationController
   end
 
   def index
-
+binding.pry
   end
 end
