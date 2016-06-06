@@ -4,6 +4,6 @@ class StationsController < ApplicationController
   end
 
   def index
-binding.pry
+    @stations = Station.search_by_zip(params["q"])
   end
 end
