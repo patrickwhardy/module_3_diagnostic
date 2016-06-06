@@ -8,7 +8,7 @@
 # And for each of the stations I should see Name, Address, Fuel Types, Distance, and Access Times
 require "rails_helper"
 
-Rspec.feature "User can search stations by zip" do
+RSpec.feature "User can search stations by zip" do
   scenario "they navigate to root and search" do
     visit root_path
 
