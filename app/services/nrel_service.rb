@@ -1,9 +1,9 @@
 class NRELService
   def initialize
-    @connection = Faraday.new(url: "https://developer.nrel.gov/api/alt-fuel-stations/v1.json?fuel_type=E85,ELEC&state=CA&limit=2&api_key=gUseDgjBMDhMyQqM5oKDWimeRzrn21kRhbxsoZag&format=JSON")
+    @connection = Faraday.new(url: "https://developer.nrel.gov")
   end
-# /api/alt-fuel-stations/v1/nearest.json?api_key=DEMO_KEY&location=1617+Cole+Blvd+Golden+CO&fuel_type=ELEC&limit=1
+
   def get_stations(zip)
-    JSON.parse(@connection.get('/api/alt-fuel-stations/v1/nearest.format?parameters').body, symbolize_names: true)
+    JSON.parse(@connection.get("/api/alt-fuel-stations/v1/nearest.json?api_key=gUseDgjBMDhMyQqM5oKDWimeRzrn21kRhbxsoZag&location=#{zip}&fuel_type=ELEC&fel_type=LPG&radius=6.0&limit=10").body, symbolize_names: true)
   end
 end
